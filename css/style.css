@@ -6,4 +6,17 @@ img {
 .col-1, .col-10 {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.dots {
+  margin: auto;
+}
+
+.dots > a {
+  margin: 3px;
+}
+
+.dots .circle {
+  color: blue;
 }

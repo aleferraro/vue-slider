@@ -35,6 +35,16 @@
           </div>
           <div class="col-10">
             <img :src="images[counter]" alt="">
+            <div class="dots">
+              <template v-for="n in images.length">
+                <a v-if="n === counter + 1" href="#">
+                  <i class="fas fa-circle circle"></i>
+                </a>
+                <a v-else href="#">
+                  <i class="far fa-circle circle"></i>
+                </a>
+              </template>
+            </div>
           </div>
           <div class="col-1">
             <a @click='next()' href="#">
