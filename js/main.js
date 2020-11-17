@@ -22,10 +22,10 @@ const slider = new Vue({
   },
   methods: {
     previous: function(){
-      (this.counter === 0) ? this.counter = this.images.length - 1: this.counter = this.counter - 1;
+      this.counter = (this.counter == 0 ? this.images.length - 1 : this.counter - 1);
     },
     next: function(){
-      (this.counter === this.images.length - 1) ? this.counter = 0: this.counter = this.counter + 1;
+      this.counter = (this.counter == this.images.length -1 ? 0 : this.counter + 1);
     }
   }
 })
