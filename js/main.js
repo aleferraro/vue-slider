@@ -18,14 +18,22 @@ const slider = new Vue({
   el: '#root',
   data: {
     images: ['img/image1.jpg', 'img/image2.jpg', 'img/image3.jpg', 'img/image4.jpg'],
-    counter: 0
+    srcIndex: 0
   },
   methods: {
     previous: function(){
-      this.counter = (this.counter == 0 ? this.images.length - 1 : this.counter - 1);
+      this.srcIndex = (this.srcIndex == 0 ? this.images.length - 1 : this.srcIndex - 1);
     },
     next: function(){
-      this.counter = (this.counter == this.images.length -1 ? 0 : this.counter + 1);
+      this.srcIndex = (this.srcIndex == this.images.length -1 ? 0 : this.srcIndex + 1);
     }
+  }
+})
+
+document.addEventListener('keydown', function(e){
+  if(e.key == 'ArrowLeft'){
+    slider.previous();
+  } else if(e.key == 'ArrowRight'){
+    slider.next();
   }
 })

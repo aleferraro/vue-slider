@@ -29,25 +29,25 @@
       <div class="container">
         <div class="row">
           <div class="col-1">
-            <a @click='previous()' href="#">
+            <a @click.prevent='previous()' href="#">
               <i class="fas fa-arrow-circle-left"></i>
             </a>
           </div>
           <div class="col-10">
-            <img :src="images[counter]" alt="">
+            <img :src="images[srcIndex]" alt="">
             <div class="dots">
-              <template v-for="n in images.length">
-                <a v-if="n === counter + 1" href="#">
-                  <i class="fas fa-circle circle"></i>
+              <template v-for="(e, i) in images.length">
+                <a v-if="srcIndex === i" href="#">
+                  <i @click.prevent='srcIndex = i' class="fas fa-circle circle"></i>
                 </a>
                 <a v-else href="#">
-                  <i class="far fa-circle circle"></i>
+                  <i @click.prevent='srcIndex = i' class="far fa-circle circle"></i>
                 </a>
               </template>
             </div>
           </div>
           <div class="col-1">
-            <a @click='next()' href="#">
+            <a @click.prevent='next()' href="#">
               <i class="fas fa-arrow-circle-right"></i>
             </a>
           </div>
